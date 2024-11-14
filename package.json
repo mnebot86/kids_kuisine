@@ -10,7 +10,7 @@
 		"test:ci": "vitest run",
 		"e2e": "cypress open",
 		"e2e:run": "cypress run",
-		"e2e:ci": "start-server-and-test dev http://localhost:3000 'npx cypress run'",
+		"e2e:ci": "start-server-and-test 'next dev' http-get://localhost:3000 'npx cypress run'",
 		"lint": "next lint",
 		"lint:fix": "next lint --fix",
 		"format": "prettier --write .",
