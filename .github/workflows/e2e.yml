@@ -24,12 +24,13 @@ jobs:
             - name: Build application
               run: npm run build
 
-            - name: Cypress run
+            - name: Start application and run Cypress tests
               uses: cypress-io/github-action@v6
               with:
                   start: npm start -- -p 3005
                   wait-on: http://localhost:3005
                   wait-on-timeout: 60
-                  runTests: npm run e2e:run
+                  config-file: cypress.config.ts
+                  spec: cypress/e2e/**/*.cy.ts
               env:
                   CI: true
