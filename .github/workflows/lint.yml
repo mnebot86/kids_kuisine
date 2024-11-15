@@ -24,4 +24,4 @@ jobs:
               run: npm run lint
 
             - name: Run Formatter Check
-              run: npm run format:check
+              run: npm run format:check"
