@@ -1,35 +1,35 @@
 name: End-to-End Tests
 
 on:
-  pull_request:
-    branches:
-      - dev
+    pull_request:
+        branches:
+            - dev
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+    cypress-run:
+        runs-on: ubuntu-22.04
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+            - name: Install dependencies
+              run: npm install --legacy-peer-deps
 
-      - name: Build application
-        run: npm run build
+            - name: Build application
+              run: npm run build
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm start -- -p 3005 
-          wait-on: http://localhost:3005
-          wait-on-timeout: 60
-          runTests: npm run e2e:run
-        env:
-          CI: true
+            - name: Cypress run
+              uses: cypress-io/github-action@v6
+              with:
+                  start: npm start -- -p 3005
+                  wait-on: http://localhost:3005
+                  wait-on-timeout: 60
+                  runTests: npm run e2e:run
+              env:
+                  CI: true
