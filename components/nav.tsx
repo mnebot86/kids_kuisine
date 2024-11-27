@@ -121,7 +121,9 @@ const Nav: React.FC = () => {
 									}}
 								>
 									<Typography sx={{ textAlign: 'center' }}>
-										<Link href={page.href}>{page.name}</Link>
+										<Link href={page.href}>
+											{page.name}
+										</Link>
 									</Typography>
 								</MenuItem>
 							))}
@@ -206,8 +208,13 @@ const Nav: React.FC = () => {
 										},
 									}}
 								>
-									<Typography component="span" sx={{ textAlign: 'center' }}>
-                                        <Link href={setting.href}>{setting.name}</Link>
+									<Typography
+										component="span"
+										sx={{ textAlign: 'center' }}
+									>
+										<Link href={setting.href}>
+											{setting.name}
+										</Link>
 									</Typography>
 								</MenuItem>
 							))}
