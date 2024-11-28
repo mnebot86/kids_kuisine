@@ -9,12 +9,25 @@ import {
 	Button,
 	Container,
 	IconButton,
+	Link as MUILink,
 	Menu,
 	MenuItem,
 	Toolbar,
 	Tooltip,
-	Typography,
 } from '@mui/material';
+
+const pages = [
+	{ name: 'Menu', href: '/menu' },
+	{ name: 'How it Works', href: '/how-it-works' },
+	{ name: 'About Us', href: '/about-us' },
+];
+
+const settings = [
+	{ name: 'Profile', href: '/profile' },
+	{ name: 'Account', href: '/account' },
+	{ name: 'Dashboard', href: '/dashboard' },
+	{ name: 'Logout', href: '/logout' },
+];
 
 const Nav: React.FC = () => {
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -27,6 +40,7 @@ const Nav: React.FC = () => {
 	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorElNav(event.currentTarget);
 	};
+
 	const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorElUser(event.currentTarget);
 	};
@@ -39,31 +53,21 @@ const Nav: React.FC = () => {
 		setAnchorElUser(null);
 	};
 
-	const pages = [
-		{ name: 'Menu', href: '/menu' },
-		{ name: 'How it Works', href: '/how-it-works' },
-		{ name: 'About Us', href: '/about-us' },
-	];
-
-	const settings = [
-		{ name: 'Profile', href: '/profile' },
-		{ name: 'Account', href: '/account' },
-		{ name: 'Dashboard', href: '/dashboard' },
-		{ name: 'Logout', href: '/logout' },
-	];
-
 	return (
-		<AppBar position="static" sx={{ backgroundColor: '#DFF0D8' }}>
+		<AppBar
+			data-testid="navigation"
+			position="static"
+		>
 			<Container maxWidth="xl">
 				<Toolbar>
 					<AdbIcon
 						sx={{ display: { xs: 'none', md: 'none' }, mr: 1 }}
 					/>
-					<Typography
+					<MUILink
+						component={Link}
+						href="/"
 						variant="h6"
 						noWrap
-						component="a"
-						href="#"
 						sx={{
 							mr: 2,
 							display: { xs: 'none', md: 'flex' },
@@ -75,7 +79,7 @@ const Nav: React.FC = () => {
 						}}
 					>
 						KIDS KUISINE
-					</Typography>
+					</MUILink>
 
 					<Box
 						sx={{
@@ -85,11 +89,7 @@ const Nav: React.FC = () => {
 					>
 						<IconButton
 							size="large"
-							aria-label="account of current user"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							sx={{ color: '#A2C428' }}
 						>
 							<MenuIcon />
 						</IconButton>
@@ -113,43 +113,23 @@ const Nav: React.FC = () => {
 								<MenuItem
 									key={page.name}
 									onClick={handleCloseNavMenu}
-									sx={{
-										color: '#A2C428',
-										'&:hover': {
-											backgroundColor: '#DFF0D8',
-										},
-									}}
+									data-testid={`link-${page.name}`}
 								>
-									<Typography sx={{ textAlign: 'center' }}>
-										<Link href={page.href}>
-											{page.name}
-										</Link>
-									</Typography>
+									<MUILink
+										component={Link}
+										href={page.href}
+										sx={{
+											textDecoration: 'none',
+											color: '#A2C428',
+										}}
+									>
+										{page.name}
+									</MUILink>
 								</MenuItem>
 							))}
 						</Menu>
 					</Box>
-					<AdbIcon
-						sx={{ display: { xs: 'none', md: 'none' }, mr: 1 }}
-					/>
-					<Typography
-						variant="h5"
-						noWrap
-						component="a"
-						href="app-bar-with-responsive-menu"
-						sx={{
-							mr: 2,
-							display: { xs: 'flex', md: 'none' },
-							flexGrow: 1,
-							fontFamily: 'Montserrat',
-							fontWeight: 700,
-							letterSpacing: '.3rem',
-							color: '#A2C428',
-							textDecoration: 'none',
-						}}
-					>
-						KIDS KUISINE
-					</Typography>
+
 					<Box
 						sx={{
 							flexGrow: 1,
@@ -159,26 +139,28 @@ const Nav: React.FC = () => {
 						{pages.map((page) => (
 							<Button
 								key={page.name}
-								onClick={handleCloseNavMenu}
+								component={Link}
+								href={page.href}
+								data-testid={`link-${page.name}`}
 								sx={{
 									my: 2,
-									color: '#A2C428',
 									display: 'block',
 									fontFamily: 'Montserrat',
 									fontWeight: 400,
 								}}
 							>
-								<Link href={page.href}>{page.name}</Link>
+								{page.name}
 							</Button>
 						))}
 					</Box>
+
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Open settings">
 							<IconButton
 								onClick={handleOpenUserMenu}
 								sx={{ p: 0 }}
 							>
-								<Avatar alt="Remy Sharp" src="filename" />
+								<Avatar alt="User Avatar">C</Avatar>
 							</IconButton>
 						</Tooltip>
 						<Menu
@@ -208,14 +190,16 @@ const Nav: React.FC = () => {
 										},
 									}}
 								>
-									<Typography
-										component="span"
-										sx={{ textAlign: 'center' }}
+									<MUILink
+										component={Link}
+										href={setting.href}
+										sx={{
+											textDecoration: 'none',
+											color: '#A2C428',
+										}}
 									>
-										<Link href={setting.href}>
-											{setting.name}
-										</Link>
-									</Typography>
+										{setting.name}
+									</MUILink>
 								</MenuItem>
 							))}
 						</Menu>
