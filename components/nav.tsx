@@ -54,10 +54,7 @@ const Nav: React.FC = () => {
 	};
 
 	return (
-		<AppBar
-			data-testid="navigation"
-			position="static"
-		>
+		<AppBar data-testid="navigation" position="static">
 			<Container maxWidth="xl">
 				<Toolbar>
 					<AdbIcon
@@ -87,10 +84,7 @@ const Nav: React.FC = () => {
 							display: { xs: 'flex', md: 'none' },
 						}}
 					>
-						<IconButton
-							size="large"
-							onClick={handleOpenNavMenu}
-						>
+						<IconButton size="large" onClick={handleOpenNavMenu}>
 							<MenuIcon />
 						</IconButton>
 						<Menu
