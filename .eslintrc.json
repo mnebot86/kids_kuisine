@@ -36,5 +36,15 @@
 			}
 		],
 		"eol-last": ["error", "always"]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"],
+			"rules": {
+				"simple-import-sort/imports": "off",
+				"simple-import-sort/exports": "off",
+				"all": "off"
+			}
+		}
+	]
 }
