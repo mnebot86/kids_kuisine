@@ -10,6 +10,7 @@ import { store } from '@/store';
 import './globals.css';
 
 import Nav from '../components/nav';
+import Hero from './component/home/Hero';
 
 const queryClient = new QueryClient();
 
@@ -105,6 +106,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 						<ThemeProvider theme={theme}>
 							<CssBaseline />
 							<Nav />
+							<Hero />
 							{children}
 						</ThemeProvider>
 					</QueryClientProvider>
