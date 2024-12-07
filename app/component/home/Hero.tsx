@@ -18,19 +18,25 @@ const Hero: React.FC = () => (
 		<Box
 			sx={{
 				textAlign: 'center',
-				margin: '0 auto',
-				backgroundColor: 'A2C428',
+				backgroundColor: '#A2C428',
+				width: '700px',
+				borderRadius: '10px',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				justifyContent: 'center',
+				padding: '20px',
+				gap: 2,
 			}}
 		>
 			<Typography
 				variant="h1"
 				sx={{
 					color: '#F8F0E6',
-					fontSize: { xs: '20px', md: '36px', lg: '60px' },
+					fontSize: { xs: '20px', md: '36px', lg: '45px' },
 					fontFamily: 'Montserrat',
 					fontWeight: 'bold',
 					textAlign: 'center',
-					marginBottom: '16px',
 					textTransform: 'uppercase',
 				}}
 			>
@@ -40,11 +46,10 @@ const Hero: React.FC = () => (
 				variant="h3"
 				sx={{
 					color: '#F8F0E6',
-					fontSize: { xs: '14px', md: '20px', lg: '30px' },
+					fontSize: { xs: '14px', md: '20px', lg: '24px' },
 					fontFamily: 'Montserrat',
-					fontWeight: 'bold',
 					textAlign: 'center',
-					marginBottom: '16px',
+					maxWidth: '566px',
 				}}
 			>
 				Ending child hunger and promoting better nutrition can create a
@@ -56,11 +61,10 @@ const Hero: React.FC = () => (
 				sx={{
 					color: '#F8F0E6',
 					backgroundColor: '#7DDCFA',
-					fontSize: { xs: '14px', md: '20px', lg: '30px' },
+					fontSize: { xs: '14px', md: '20px', lg: '24px' },
 					fontFamily: 'Montserrat',
 					fontWeight: 'bold',
 					textAlign: 'center',
-					marginBottom: '16px',
 				}}
 			>
 				VIEW MENU
