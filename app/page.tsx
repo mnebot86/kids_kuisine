@@ -4,7 +4,7 @@ import Hero from './component/home/Hero';
 
 const HomePage = () => (
 	<Container
-		maxWidth="xl"
+		maxWidth={false}
 		sx={{
 			display: 'flex',
 			alignItems: 'center',
