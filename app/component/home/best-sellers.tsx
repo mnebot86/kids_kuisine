@@ -21,8 +21,19 @@ interface Item {
 }
 
 const BestSellers: React.FC<BestSellersProps> = ({ items }) => (
-	<Container>
-		<Typography variant="h3" align="center" gutterBottom>
+	<Container maxWidth="xl">
+		<Typography
+			variant="h3"
+			align="center"
+			gutterBottom
+			sx={{
+				color: '#A2C428',
+				fontFamily: 'Montserrat',
+				fontSize: '35px',
+				textTransform: 'uppercase',
+				fontStyle: 'bold',
+			}}
+		>
 			Best Sellers
 		</Typography>
 		<Grid container spacing={4}>
@@ -33,13 +44,33 @@ const BestSellers: React.FC<BestSellersProps> = ({ items }) => (
 							component="img"
 							height="200"
 							image={item.image}
-							alt={item.name}
 						/>
-						<CardContent>
-							<Typography variant="h6" gutterBottom>
+						<CardContent
+							sx={{
+								backgroundColor: '#FFFDFD',
+							}}
+						>
+							<Typography
+								variant="h6"
+								gutterBottom
+								sx={{
+									color: '#A2C428',
+									fontFamily: 'Montserrat',
+									fontSize: '12px',
+									fontStyle: 'bold',
+								}}
+							>
 								{item.name}
 							</Typography>
-							<Typography variant="body2">
+							<Typography
+								variant="body2"
+								sx={{
+									color: '#A2C428',
+									fontFamily: 'Montserrat',
+									fontSize: '12px',
+									fontStyle: 'bold',
+								}}
+							>
 								{item.description}
 							</Typography>
 							<Button variant="contained" fullWidth>

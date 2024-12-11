@@ -14,21 +14,22 @@ const items: Item[] = [
 	{
 		id: 1,
 		name: 'Lasagna',
-		image: '',
-		description: 'cheesy lasagna',
+		image: 'https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-12-scaled.jpg',
+		description: 'Cheesy lasagna',
 	},
 	{
 		id: 2,
-		name: 'Pepperoni Pizza',
-		image: '',
-		description: 'cheesy pepperoni pizza',
+		name: 'Chicken Caesar Salad',
+		image: 'https://heartbeetkitchen.com/foodblog/wp-content/uploads/2022/06/ultimate-grilled-chicken-caesar-salad.jpg',
+		description:
+			'Chicken, avocadoes, vegetables drizzled in caesar dressing',
 	},
 
 	{
 		id: 3,
-		name: 'turkey sandwich',
-		image: '',
-		description: 'turkey sandwich with cheese and vegetables',
+		name: 'Turkey sandwich',
+		image: 'https://www.theoriginaldish.com/wp-content/uploads/2023/01/Smoked-Turkey-Sandwich-2-scaled.jpg',
+		description: 'Turkey sandwich with cheese and vegetables',
 	},
 ];
 
@@ -40,6 +41,10 @@ const HomePage = () => (
 			alignItems: 'center',
 			justifyContent: 'center',
 			textAlign: 'center',
+<<<<<<< HEAD
+=======
+			bgcolor: 'background.paper',
+>>>>>>> 619ee23 (updates to styling best-sellers comp)
 		}}
 	>
 		<Hero />
