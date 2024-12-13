@@ -2,6 +2,7 @@ import { Container } from '@mui/material';
 
 import BestSellers from './component/home/best-sellers';
 import Hero from './component/home/Hero';
+import Hero_Two from './component/home/Hero-2';
 
 interface Item {
 	id: number;
@@ -47,6 +48,7 @@ const HomePage = () => (
 	>
 		<Hero />
 		<BestSellers items={items} />
+		<Hero_Two />
 	</Container>
 );
 
