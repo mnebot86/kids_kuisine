@@ -31,7 +31,8 @@ const BestSellers: React.FC<BestSellersProps> = ({ items }) => (
 				fontFamily: 'Montserrat',
 				fontSize: '35px',
 				textTransform: 'uppercase',
-				fontStyle: 'bold',
+				fontWeight: 'bold',
+				padding: '20px',
 			}}
 		>
 			Best Sellers

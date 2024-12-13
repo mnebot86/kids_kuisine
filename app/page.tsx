@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 
-import Hero from './component/home/Hero';
 import BestSellers from './component/home/best-sellers';
+import Hero from './component/home/Hero';
 
 interface Item {
 	id: number;
@@ -38,13 +38,11 @@ const HomePage = () => (
 		maxWidth={false}
 		sx={{
 			display: 'flex',
+			flexDirection: 'column',
 			alignItems: 'center',
 			justifyContent: 'center',
 			textAlign: 'center',
-<<<<<<< HEAD
-=======
-			bgcolor: 'background.paper',
->>>>>>> 619ee23 (updates to styling best-sellers comp)
+			backgroundColor: 'background.paper',
 		}}
 	>
 		<Hero />
