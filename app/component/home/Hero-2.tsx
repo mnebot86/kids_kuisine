@@ -13,6 +13,7 @@ const HeroTwo: React.FC = () => (
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
+			paddingTop: '30px',
 		}}
 	>
 		<Box

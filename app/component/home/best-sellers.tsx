@@ -21,7 +21,12 @@ interface Item {
 }
 
 const BestSellers: React.FC<BestSellersProps> = ({ items }) => (
-	<Container maxWidth="xl">
+	<Container
+		maxWidth="xl"
+		sx={{
+			paddingBottom: '30px',
+		}}
+	>
 		<Typography
 			variant="h3"
 			align="center"
@@ -70,6 +75,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ items }) => (
 									fontFamily: 'Montserrat',
 									fontSize: '12px',
 									fontStyle: 'bold',
+									paddingBottom: '10px',
 								}}
 							>
 								{item.description}
