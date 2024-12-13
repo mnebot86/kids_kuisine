@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 
-const Hero_Two: React.FC = () => (
+const HeroTwo: React.FC = () => (
 	<Container
 		maxWidth="xl"
 		sx={{
@@ -69,4 +69,4 @@ const Hero_Two: React.FC = () => (
 	</Container>
 );
 
-export default Hero_Two;
+export default HeroTwo;
