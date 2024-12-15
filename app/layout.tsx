@@ -9,6 +9,7 @@ import { store } from '@/store';
 
 import './globals.css';
 
+import Footer from '../components/footer';
 import Nav from '../components/nav';
 
 const queryClient = new QueryClient();
@@ -106,6 +107,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 							<CssBaseline />
 							<Nav />
 							{children}
+							<Footer />
 						</ThemeProvider>
 					</QueryClientProvider>
 				</Provider>
