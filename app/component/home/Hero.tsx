@@ -65,9 +65,10 @@ const Hero: React.FC = () => (
 					fontFamily: 'Montserrat',
 					fontWeight: 'bold',
 					textAlign: 'center',
+					textTransform: 'uppercase',
 				}}
 			>
-				VIEW MENU
+				View Menu
 			</Button>
 		</Box>
 	</Container>

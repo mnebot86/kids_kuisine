@@ -1,9 +1,15 @@
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
-// import Image from '';
+import Image from 'next/image';
+import { Box, Button, Container, Typography } from '@mui/material';
+
+import mealImage from '../../../public/images/meal-img.jpg';
 
 const HowItWorks: React.FC = () => (
-	<Container>
+	<Container
+		sx={{
+			padding: '20px',
+		}}
+	>
 		<Box>
 			<Typography
 				variant="h4"
@@ -11,9 +17,10 @@ const HowItWorks: React.FC = () => (
 					textAlign: 'center',
 					fontFamily: 'Montserrat',
 					fontWeight: 'bold',
+					fontSize: { xs: '20px', md: '36px', lg: '45px' },
 					color: 'primary.main',
 					textTransform: 'uppercase',
-					padding: '20px',
+					paddingBottom: '20px',
 				}}
 			>
 				How it Works ?
@@ -23,8 +30,8 @@ const HowItWorks: React.FC = () => (
 			sx={{
 				display: 'flex',
 				flexDirection: { xs: 'column', md: 'row' },
-				alignItems: 'center',
-				justifyCenter: 'center',
+				alignItems: { xs: 'center', md: 'start' },
+				justifyContent: 'center',
 				gap: '32px',
 			}}
 		>
@@ -36,21 +43,52 @@ const HowItWorks: React.FC = () => (
 					height: '250px',
 				}}
 			>
-				{/* <Image /> */}
+				<Image
+					src={mealImage}
+					alt="sample image"
+					layout="fill"
+					objectFit="cover"
+				/>
 			</Box>
 			<Box
 				sx={{
 					fontFamily: 'Montserrat',
+					fontSize: { xs: '14px', md: '16px', lg: '18px' },
 					textAlign: 'justify',
 					color: 'primary.main',
 					width: { xs: '100%', md: '50%' },
 				}}
 			>
-				<ol>
-					<li>Pick a plan </li>
-					<li>Pick your meals </li>
-					<li>We cook & deliver them to your child’s school. </li>
-				</ol>
+				<Box
+					component="ol"
+					sx={{
+						listStyleType: 'decimal',
+					}}
+				>
+					<li>Pick a plan</li>
+					<li>Pick your meals</li>
+					<li>We cook & deliver them to your child’s school</li>
+				</Box>
+				<Box>
+					<Button
+						variant="contained"
+						href="/how-it-works"
+						sx={{
+							color: '#F8F0E6',
+							backgroundColor: '#7DDCFA',
+							fontSize: { xs: '14px', md: '16px', lg: '20px' },
+							fontFamily: 'Montserrat',
+							fontWeight: 'bold',
+							textAlign: 'center',
+							textTransform: 'uppercase',
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'center',
+						}}
+					>
+						View Menu
+					</Button>
+				</Box>
 			</Box>
 		</Box>
 	</Container>
