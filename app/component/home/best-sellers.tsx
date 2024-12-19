@@ -35,7 +35,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ items }) => (
 				padding: '20px',
 			}}
 		>
-			Best Sellers
+			{/* Kid's Favorites */}
 		</Typography>
 		<Grid container spacing={4}>
 			{items.map((item) => (
